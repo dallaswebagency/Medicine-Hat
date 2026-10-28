@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Residential & Commercial Cleaning Services | Kleenway Services | Medicine Hat</title>
+<meta name="description" content="Kleenway Services is a full-service residential and commercial cleaning company serving Medicine Hat and area since 2003. Call (403) 502-1027.">
+<style>
+@font-face{font-family:"Fraunces";src:url(assets/fonts/fraunces-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Figtree";src:url(assets/fonts/figtree-latin-wght-normal.woff2) format("woff2");font-weight:300 900;font-display:swap}
+
+:root{
+  --navy:#0a2240; --navy-2:#06172c; --blue:#1668d6; --water:#2f8fe6; --sky:#e8f3fd; --foam:#f6fafe;
+  --yellow:#ffc928; --yellow-d:#e8ae00; --ink:#14263d; --muted:#53657c; --line:#d5e3f1;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif; --sans:"Figtree","Segoe UI",system-ui,sans-serif;
+  --wrap:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{width:min(var(--wrap),100% - 48px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacing:-.01em}
+.eyebrow{font-size:.8rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;font-weight:800;font-size:.98rem;border-radius:4px;transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer;border:2px solid transparent}
+.btn:hover{transform:translateY(-2px)}
+.btn-y{background:var(--yellow);color:var(--navy);box-shadow:0 6px 0 var(--yellow-d)}
+.btn-y:hover{box-shadow:0 8px 0 var(--yellow-d)}
+.btn-line{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-line:hover{background:#fff;color:var(--navy)}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:0 6px 0 #000}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+
+/* top strip */
+.strip{background:var(--yellow);color:var(--navy);font-size:.88rem;font-weight:700}
+.strip .wrap{display:flex;justify-content:space-between;gap:16px;padding:.5rem 0}
+.strip a{text-decoration:underline;text-underline-offset:3px}
+
+/* header */
+.hdr{background:var(--navy);position:sticky;top:0;z-index:50;transition:box-shadow .3s}
+.hdr.scrolled{box-shadow:0 10px 30px rgba(3,12,28,.35)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
+.logo img{height:58px;width:auto}
+.nav{display:flex;align-items:center;gap:6px}
+.nav>li{position:relative}
+.nav>li>a{display:flex;align-items:center;gap:6px;color:#fff;font-weight:700;font-size:.95rem;padding:.7rem .85rem;border-radius:4px;transition:background .2s,color .2s}
+.nav>li>a:hover,.nav>li:focus-within>a{background:rgba(255,255,255,.1)}
+.nav .has-sub>a::after{content:"";width:6px;height:6px;border-right:2px solid var(--yellow);border-bottom:2px solid var(--yellow);transform:rotate(45deg) translateY(-2px)}
+.sub{position:absolute;left:0;top:100%;min-width:280px;background:#fff;border-top:4px solid var(--yellow);box-shadow:0 22px 50px rgba(3,12,28,.28);padding:.6rem;opacity:0;visibility:hidden;transform:translateY(10px);transition:.2s}
+.has-sub:hover .sub,.has-sub:focus-within .sub{opacity:1;visibility:visible;transform:none}
+.sub a{display:block;padding:.6rem .9rem;border-radius:4px;color:var(--ink);font-weight:600;font-size:.95rem}
+.sub a:hover{background:var(--sky);color:var(--blue)}
+.hdr-cta{display:flex;align-items:center;gap:14px}
+.hdr-call{color:#fff;font-weight:800;font-size:.95rem;white-space:nowrap}
+.hdr-call small{display:block;font-size:.68rem;color:var(--yellow);letter-spacing:.14em;text-transform:uppercase;font-weight:800}
+.hire{background:var(--yellow);color:var(--navy);font-weight:800;font-size:.88rem;padding:.65rem 1.1rem;border-radius:999px;white-space:nowrap;position:relative}
+.hire::before{content:"";position:absolute;inset:-4px;border-radius:999px;border:2px solid var(--yellow);opacity:0;animation:ping 2.6s infinite}
+@keyframes ping{0%{transform:scale(.9);opacity:.8}70%,100%{transform:scale(1.18);opacity:0}}
+.burger{display:none;width:46px;height:46px;border:2px solid rgba(255,255,255,.4);border-radius:6px;background:transparent;cursor:pointer;position:relative}
+.burger span,.burger span::before,.burger span::after{position:absolute;left:11px;width:20px;height:2px;background:#fff;content:"";transition:.25s}
+.burger span{top:20px}.burger span::before{top:-7px;left:0}.burger span::after{top:7px;left:0}
+.burger[aria-expanded=true] span{background:transparent}
+.burger[aria-expanded=true] span::before{top:0;transform:rotate(45deg)}
+.burger[aria-expanded=true] span::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;color:#fff;background:var(--navy-2);isolation:isolate;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(6,23,44,.93) 8%,rgba(8,34,68,.74) 55%,rgba(10,50,100,.5)),url(assets/img/water-splash.jpg) center top/cover}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center;padding:84px 0 120px}
+.hero h1{font-size:clamp(2.5rem,4.8vw,4.2rem);margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--yellow);position:relative;white-space:nowrap}
+.hero .eyebrow{color:var(--aqua,#8fd0f5);display:flex;align-items:center;gap:12px}
+.hero .eyebrow::before{content:"";width:38px;height:3px;background:var(--yellow)}
+.tagline{font-family:var(--serif);font-size:1.35rem;color:#cfe6fb;margin-bottom:34px;font-weight:400}
+.hero .cta{display:flex;flex-wrap:wrap;gap:16px}
+.hero-art{position:relative;min-height:470px}
+.ph-a{position:absolute;right:0;top:0;width:86%;aspect-ratio:1.28;object-fit:cover;clip-path:polygon(0 0,86% 0,100% 14%,100% 100%,0 100%);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.ph-b{width:100%;aspect-ratio:1.45;object-fit:cover;object-position:30% 50%;border:9px solid #fff;box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.ph-b-wrap{position:absolute;left:-14px;bottom:4px;width:62%;transform:rotate(-4deg)}
+.ph-b-wrap::after{content:"";position:absolute;left:50%;top:-14px;width:96px;height:28px;background:rgba(255,201,40,.85);transform:translateX(-50%) rotate(-4deg)}
+.stamp{position:absolute;right:-8px;bottom:36px;width:176px;height:176px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.35))}
+.stamp .ring{transform-origin:100px 100px;animation:spin 28s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* trust ribbon */
+.ribbon{background:var(--yellow);color:var(--navy);position:relative;z-index:2}
+.ribbon ul{display:grid;grid-template-columns:repeat(5,auto);justify-content:space-between;gap:10px 22px;padding:20px 0;font-weight:800;font-size:.88rem}
+.ribbon li{display:flex;align-items:center;gap:9px}
+.ribbon li::before{content:"";width:16px;height:16px;background:var(--navy);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+
+/* help */
+.help{padding:120px 0 150px;background:var(--foam);position:relative}
+.help-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.help h2{font-size:clamp(2.4rem,4.6vw,3.9rem);margin:14px 0 22px}
+.help p.lead{color:var(--muted);font-size:1.12rem;margin-bottom:32px;max-width:440px}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.door{align-self:start;background:#fff;display:flex;flex-direction:column;box-shadow:0 22px 50px rgba(10,34,64,.12);transition:transform .35s,box-shadow .35s}
+.door:nth-child(2){margin-top:56px}
+.door:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(10,34,64,.2)}
+.door-img{aspect-ratio:1.1;overflow:hidden;clip-path:polygon(0 0,82% 0,100% 12%,100% 100%,0 100%)}
+.door-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.door:hover .door-img img{transform:scale(1.07)}
+.door-body{padding:26px 26px 30px;border-bottom:5px solid var(--blue)}
+.door:nth-child(2) .door-body{border-color:var(--yellow)}
+.door-body h3{font-size:1.18rem;letter-spacing:.02em;margin-bottom:10px;text-transform:uppercase;font-family:var(--sans);font-weight:900}
+.door-body p{color:var(--muted);font-size:.98rem;margin-bottom:18px}
+.arrow-link{display:inline-flex;align-items:center;gap:10px;font-weight:800;color:var(--blue)}
+.arrow-link::after{content:"→";transition:transform .25s}
+.door:hover .arrow-link::after,.arrow-link:hover::after{transform:translateX(6px)}
+
+/* services checklist */
+.services{background:var(--navy);color:#fff;position:relative;padding:110px 0 120px;overflow:hidden}
+.services::before{content:"";position:absolute;inset:0;background:url(assets/img/bubbles.jpg) center/cover;opacity:.1;mix-blend-mode:screen}
+.services .wrap{position:relative}
+.services-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.services h2{font-size:clamp(2.2rem,4.2vw,3.5rem)}
+.services-head p{max-width:420px;color:#b9d0ea}
+.board{display:grid;grid-template-columns:1fr 1fr .8fr;gap:26px;align-items:stretch}
+.clip{background:#fff;color:var(--ink);padding:54px 32px 34px;position:relative;box-shadow:0 26px 50px rgba(0,0,0,.35)}
+.clip::before{content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:120px;height:34px;background:#95a5b8;border-radius:6px 6px 0 0;box-shadow:inset 0 -6px 0 rgba(0,0,0,.12)}
+.clip::after{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);width:54px;height:12px;background:var(--navy);border-radius:0 0 8px 8px}
+.clip:nth-child(2){transform:rotate(1.2deg)}
+.clip:nth-child(1){transform:rotate(-1.2deg)}
+.clip h3{font-size:1.7rem;color:var(--navy);margin-bottom:6px}
+.clip .sub-t{color:var(--muted);font-size:.85rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px;display:block}
+.clip li a{display:flex;align-items:center;gap:14px;padding:.8rem 0;border-bottom:1.5px dashed var(--line);font-weight:700;transition:color .2s,padding .25s}
+.clip li:last-child a{border-bottom:0}
+.clip li a::before{content:"";flex:none;width:22px;height:22px;border:2.5px solid var(--navy);border-radius:4px;background:#fff center/14px no-repeat;transition:.25s}
+.clip li a:hover{color:var(--blue);padding-left:8px}
+.clip li a:hover::before{background-color:var(--yellow);border-color:var(--yellow-d);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2 7.5l3.2 3L12 3.5' fill='none' stroke='%230a2240' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.promo{background:var(--yellow);color:var(--navy);padding:34px 28px;display:flex;flex-direction:column;justify-content:space-between;clip-path:polygon(10% 0,90% 0,100% 100%,0 100%);padding-inline:14%;text-align:center;transform:rotate(-1deg)}
+.promo h3{font-size:2rem;margin:10px 0}
+.promo p{font-weight:700;font-size:.95rem}
+.promo .tri{width:74px;margin:0 auto}
+.promo .btn{justify-content:center;margin-top:20px;font-size:.88rem;padding:.8rem 1rem}
+
+/* since */
+.since{padding:130px 0 110px;background:#fff;position:relative}
+.since-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.big-year{font-family:var(--serif);font-weight:800;font-size:clamp(7rem,17vw,15rem);line-height:.8;color:var(--navy);text-shadow:8px 8px 0 var(--yellow);letter-spacing:-.04em;position:relative}
+.big-cap{margin-top:22px;font-family:var(--serif);font-size:1.5rem;color:var(--navy);max-width:340px;line-height:1.25}
+.since h2{font-size:clamp(2rem,3.6vw,3rem);margin:14px 0 20px}
+.since p{color:var(--muted);margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0}
+.chips li{background:var(--sky);color:var(--navy);font-weight:800;font-size:.9rem;padding:.55rem 1.1rem;border-radius:999px;border:2px solid var(--line)}
+.route{margin-top:96px;position:relative}
+.route h3{font-size:1.6rem;margin-bottom:46px;text-align:center}
+.route-line{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;position:relative}
+.route-line::before{content:"";position:absolute;left:16%;right:16%;top:34px;border-top:3px dashed var(--water);opacity:.6}
+.step{text-align:center;position:relative;padding:0 10px}
+.step b{width:70px;height:70px;border-radius:50%;background:var(--navy);color:var(--yellow);font-family:var(--serif);font-size:1.9rem;display:grid;place-items:center;margin:0 auto 20px;position:relative;box-shadow:0 0 0 8px #fff,0 0 0 11px var(--sky)}
+.step h4{font-family:var(--serif);font-size:1.3rem;margin-bottom:8px;color:var(--navy)}
+.step p{color:var(--muted);font-size:.98rem;max-width:300px;margin-inline:auto}
+
+/* call band */
+.callband{position:relative;padding:130px 0;color:#fff;isolation:isolate;overflow:hidden;background:#0b0f18}
+.callband::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,16,32,.9),rgba(6,16,32,.35)),url(assets/img/placard.jpg) center/cover}
+.callband .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.callband h2{font-size:clamp(2rem,3.8vw,3.2rem)}
+.callband h2 em{font-style:normal;color:var(--yellow)}
+.sign{background:var(--yellow);color:var(--navy);padding:46px 40px 40px;text-align:center;clip-path:polygon(7% 0,93% 0,100% 100%,0 100%);transform:rotate(-2deg);box-shadow:0 30px 60px rgba(0,0,0,.4);position:relative;margin-inline:auto;max-width:480px;width:100%}
+.sign small{font-weight:900;letter-spacing:.2em;font-size:.78rem;text-transform:uppercase}
+.sign a.num{display:block;font-family:var(--serif);font-weight:800;font-size:clamp(2rem,4vw,3.1rem);margin:8px 0;line-height:1.1}
+.sign p{font-weight:800;margin-bottom:18px}
+
+/* testimonials */
+.proof{padding:120px 0;background:var(--sky) url(assets/img/bubbles.jpg) center/cover;position:relative}
+.proof::before{content:"";position:absolute;inset:0;background:rgba(240,248,255,.78)}
+.proof .wrap{position:relative}
+.proof h2{font-size:clamp(2.2rem,4.4vw,3.6rem);margin:12px 0 54px;max-width:640px}
+.quotes{columns:3;column-gap:26px}
+.q{break-inside:avoid;background:#fff;padding:34px 30px 28px;margin-bottom:26px;position:relative;border-top:5px solid var(--water);box-shadow:0 14px 34px rgba(10,34,64,.1)}
+.q::before{content:"“";position:absolute;top:2px;right:20px;font-family:var(--serif);font-size:5.5rem;color:var(--sky);line-height:1;font-weight:800}
+.q p{position:relative;font-size:1rem;color:#2c3f57;margin-bottom:20px}
+.q cite{font-style:normal;display:block;font-weight:900;color:var(--navy)}
+.q cite span{display:block;font-weight:600;color:var(--muted);font-size:.88rem}
+.q.dark{background:var(--navy);border-color:var(--yellow)}
+.q.dark p{color:#dbe9f8;font-size:1.12rem;font-family:var(--serif)}
+.q.dark cite{color:#fff}.q.dark cite span{color:#9fbbdc}
+.q.dark::before{color:rgba(255,255,255,.1)}
+.q.y{border-color:var(--yellow)}
+
+/* faq */
+.faq{padding:120px 0;background:#fff}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+.faq-side{position:sticky;top:120px}
+.faq-side .qi{width:68px;height:68px;margin-bottom:18px}
+.faq-side h2{font-size:clamp(2.1rem,3.8vw,3.1rem);margin-bottom:28px}
+.pledge{background:var(--navy);color:#fff;padding:34px 30px;position:relative;border-left:8px solid var(--yellow)}
+.pledge h3{font-size:1.4rem;margin-bottom:10px;color:var(--yellow)}
+.pledge p{color:#cfe0f3;font-size:.98rem}
+.acc details{border-bottom:2px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:1.5rem 0;font-family:var(--serif);font-weight:700;font-size:1.25rem;color:var(--navy)}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";flex:none;width:38px;height:38px;border-radius:50%;background:var(--sky);color:var(--blue);display:grid;place-items:center;font-family:var(--sans);font-size:1.5rem;font-weight:600;transition:.25s}
+.acc details[open] summary::after{content:"−";background:var(--yellow);color:var(--navy);transform:rotate(180deg)}
+.acc details p{padding:0 60px 26px 0;color:var(--muted)}
+.price{display:inline-block;background:var(--yellow);color:var(--navy);font-weight:900;padding:.1rem .6rem;border-radius:3px}
+
+/* closing */
+.close{position:relative;color:#fff;text-align:center;padding:130px 0 140px;isolation:isolate;overflow:hidden;background:var(--navy)}
+.close::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(10,34,64,.86),rgba(10,34,64,.94)),url(assets/img/bubbles.jpg) center/cover}
+.close .mark{width:min(300px,70%);margin:0 auto 34px}
+.close h2{font-size:clamp(2rem,4.2vw,3.4rem);max-width:860px;margin:0 auto 18px}
+.close p{font-family:var(--serif);font-size:1.4rem;color:#cfe6fb;margin-bottom:36px}
+
+/* footer */
+.ftr{background:var(--navy-2);color:#b8cbe2;padding:80px 0 0}
+.ftr-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:48px;padding-bottom:60px}
+.ftr .logo img{height:64px;margin-bottom:20px}
+.ftr h4{color:#fff;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px;font-family:var(--sans);font-weight:900}
+.ftr li{margin-bottom:.55rem}
+.ftr li a{transition:color .2s,padding .2s}
+.ftr li a:hover{color:var(--yellow);padding-left:5px}
+.ftr .call{display:block;color:#fff;font-family:var(--serif);font-size:1.6rem;font-weight:700;margin:6px 0 14px}
+.ftr-bot{border-top:1px solid rgba(255,255,255,.12);padding:22px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.9rem}
+.ftr-bot a{color:#fff;font-weight:800;border-bottom:2px solid var(--yellow)}
+.ftr-bot a:hover{color:var(--yellow)}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.12s}.js .rv.d2{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+
+/* responsive */
+@media (max-width:1080px){
+  .ribbon ul{grid-template-columns:repeat(2,auto);justify-content:start}
+  .hdr-call{display:none}
+  .board{grid-template-columns:1fr 1fr}
+  .promo{grid-column:1/-1;clip-path:none;padding:30px;transform:none;flex-direction:row;align-items:center;gap:20px;text-align:left;flex-wrap:wrap}
+  .promo .tri{margin:0}.promo .btn{margin:0}
+  .quotes{columns:2}
+}
+@media (max-width:900px){
+  .burger{display:block}
+  .hdr .wrap{height:74px}
+  .nav{position:absolute;left:0;right:0;top:100%;background:var(--navy);flex-direction:column;align-items:stretch;padding:12px 24px 26px;gap:0;display:none;box-shadow:0 24px 40px rgba(0,0,0,.35);max-height:calc(100vh - 120px);overflow:auto}
+  .nav.open{display:flex}
+  .nav>li>a{padding:.95rem .4rem;border-bottom:1px solid rgba(255,255,255,.1);border-radius:0}
+  .sub{position:static;opacity:1;visibility:visible;transform:none;background:transparent;box-shadow:none;border:0;padding:0 0 8px 14px;min-width:0}
+  .sub a{color:#bcd2ea;padding:.45rem .4rem}
+  .nav .has-sub>a::after{display:none}
+  .hero-grid,.help-grid,.since-grid,.faq-grid,.callband .wrap{grid-template-columns:1fr}
+  .hero-grid{padding:60px 0 90px;gap:60px}
+  .hero-art{min-height:400px;max-width:560px}
+  .faq-side{position:static}
+  .help{padding:80px 0 100px}
+  .since{padding:80px 0}
+  .callband{padding:90px 0}
+  .proof,.faq{padding:80px 0}
+  .ftr-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{width:calc(100% - 32px)}
+  .strip .wrap{flex-direction:column;gap:2px;text-align:center}
+  .hire{display:none}
+  .logo img{height:48px}
+  .hero-art{min-height:330px}
+  .stamp{width:120px;height:120px;bottom:20px}
+  .doors{grid-template-columns:1fr}
+  .door:nth-child(2){margin-top:0}
+  .board{grid-template-columns:1fr}
+  .clip:nth-child(n){transform:none}
+  .route-line{grid-template-columns:1fr;gap:44px}
+  .route-line::before{display:none}
+  .quotes{columns:1}
+  .ribbon ul{grid-template-columns:1fr}
+  .acc details p{padding-right:0}
+  .acc summary{font-size:1.1rem}
+  .ftr-grid{grid-template-columns:1fr}
+  .promo{clip-path:none}
+}
+</style>
+</head>
+<body>
+
+<div class="strip"><div class="wrap">
+  <span>Great Work, Great Service, Great Cleaning</span>
+  <a href="tel:4035021027">Call (403) 502-1027</a>
+</div></div>
+
+<header class="hdr" id="top">
+  <div class="wrap">
+    <a class="logo" href="https://kleenway.ca/" aria-label="Kleenway Services home"><img src="assets/img/kleenway-no-monogram.svg" alt="Kleenway Services" width="198" height="58"></a>
+    <nav aria-label="Main">
+      <ul class="nav" id="nav">
+        <li><a href="https://kleenway.ca/why-us">Why Us?</a></li>
+        <li class="has-sub"><a href="https://kleenway.ca/residential">Residential</a>
+          <div class="sub">
+            <a href="https://kleenway.ca/residential/residential-upholstery-cleaning">Upholstery</a>
+            <a href="https://kleenway.ca/residential/residential-carpet-cleaning">Residential Carpet Cleaning</a>
+            <a href="https://kleenway.ca/residential/move-in-out">Move In / Out</a>
+            <a href="https://kleenway.ca/residential/top-to-bottom">Top to Bottom (One Time)</a>
+            <a href="https://kleenway.ca/residential/home-cleaning-recurring">Home Cleaning (Recurring)</a>
+          </div>
+        </li>
+        <li class="has-sub"><a href="https://kleenway.ca/commercial">Commercial</a>
+          <div class="sub">
+            <a href="https://kleenway.ca/commercial/commercial-carpet-cleaning">Commercial Carpet Cleaning</a>
+            <a href="https://kleenway.ca/commercial/post-construction-cleaning">Post Construction Cleaning</a>
+            <a href="https://kleenway.ca/commercial/janitorial">Janitorial</a>
+          </div>
+        </li>
+        <li><a href="https://kleenway.ca/promotions">Promotions</a></li>
+        <li><a href="https://kleenway.ca/jobs">Work with us!</a></li>
+        <li><a href="https://kleenway.ca/contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hdr-cta">
+      <a class="hdr-call" href="tel:4035021027"><small>Call us</small>(403) 502-1027</a>
+      <a class="hire" href="https://kleenway.ca/hiring">We're Hiring!</a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Residential &amp; Commercial Cleaning</p>
+      <h1>We Keep Your Home and Facility <em>Safe and Healthy</em></h1>
+      <p class="tagline">Great Work, Great Service, Great Cleaning</p>
+      <div class="cta">
+        <a class="btn btn-y" href="tel:4035021027">Call (403) 502-1027</a>
+        <a class="btn btn-line" href="https://kleenway.ca/disinfecting">Learn more</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="false">
+      <img class="ph-a" src="assets/img/cleaning-cart.jpg" alt="Kleenway cleaning cart with a Kleenway Cares wet floor sign">
+      <div class="ph-b-wrap"><img class="ph-b" src="assets/img/placard.jpg" alt="Cleaning in progress caution signs"></div>
+      <svg class="stamp" viewBox="0 0 200 200" role="img" aria-label="Since 2003. Licensed, insured, bonded, WCB">
+        <circle cx="100" cy="100" r="98" fill="#ffc928"/>
+        <circle cx="100" cy="100" r="62" fill="none" stroke="#0a2240" stroke-width="2"/>
+        <g class="ring">
+          <defs><path id="ringpath" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+          <text font-family="Figtree,sans-serif" font-weight="900" font-size="15.4" letter-spacing="2.6" fill="#0a2240"><textPath href="#ringpath">LICENSED • INSURED • BONDED • WCB • </textPath></text>
+        </g>
+        <text x="100" y="86" text-anchor="middle" font-family="Figtree,sans-serif" font-weight="900" font-size="12" letter-spacing="3" fill="#0a2240">SINCE</text>
+        <text x="100" y="124" text-anchor="middle" font-family="Fraunces,serif" font-weight="800" font-size="42" fill="#0a2240">2003</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST RIBBON -->
+<div class="ribbon">
+  <ul class="wrap">
+    <li>Serving Medicine Hat &amp; area since 2003</li>
+    <li>Licensed, insured &amp; bonded</li>
+    <li>WCB coverage for our staff</li>
+    <li>Police cleared Kleen Teem</li>
+    <li>24 hour guarantee</li>
+  </ul>
+</div>
+
+<!-- HOW CAN WE HELP -->
+<section class="help">
+  <div class="wrap help-grid">
+    <div class="rv">
+      <p class="eyebrow">Residential And Commercial Cleaning Services</p>
+      <h2>How can we help?</h2>
+      <p class="lead">When it comes to putting your best foot forward, nothing beats a fresh, clean home or office. Let Kleenway Services help you make the best impression!</p>
+      <a class="btn btn-navy" href="https://kleenway.ca/contact">Get in touch!</a>
+    </div>
+    <div class="doors">
+      <a class="door rv d1" href="https://kleenway.ca/residential">
+        <div class="door-img"><img src="assets/img/residential-carpet.jpg" alt="Vacuuming a fresh cream carpet" loading="lazy"></div>
+        <div class="door-body">
+          <h3>Residential Cleaning Services</h3>
+          <p>A clean home does more than look good. It supports your health and lifts your mood.</p>
+          <span class="arrow-link">Residential services</span>
+        </div>
+      </a>
+      <a class="door rv d2" href="https://kleenway.ca/commercial">
+        <div class="door-img"><img src="assets/img/commercial-disinfect.jpg" alt="Technician in protective gear disinfecting a surface" loading="lazy"></div>
+        <div class="door-body">
+          <h3>Commercial Cleaning Services</h3>
+          <p>A spotless office is the first impression your clients and staff get of your business.</p>
+          <span class="arrow-link">Commercial services</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES CHECKLIST -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-head rv">
+      <div>
+        <p class="eyebrow" style="color:var(--yellow)">Medicine Hat Residential &amp; Commercial</p>
+        <h2>Our Services</h2>
+      </div>
+      <p>Residential and commercial cleaning services you can trust, with one-time and recurring booking options.</p>
+    </div>
+    <div class="board">
+      <div class="clip rv">
+        <h3>Residential</h3><span class="sub-t">Services</span>
+        <ul>
+          <li><a href="https://kleenway.ca/residential/residential-upholstery-cleaning">Upholstery</a></li>
+          <li><a href="https://kleenway.ca/residential/residential-carpet-cleaning">Residential Carpet Cleaning</a></li>
+          <li><a href="https://kleenway.ca/residential/move-in-out">Move In / Out</a></li>
+          <li><a href="https://kleenway.ca/residential/top-to-bottom">Top to Bottom (One Time)</a></li>
+          <li><a href="https://kleenway.ca/residential/home-cleaning-recurring">Home Cleaning (Recurring)</a></li>
+        </ul>
+      </div>
+      <div class="clip rv d1">
+        <h3>Commercial</h3><span class="sub-t">Services</span>
+        <ul>
+          <li><a href="https://kleenway.ca/commercial/commercial-carpet-cleaning">Commercial Carpet Cleaning</a></li>
+          <li><a href="https://kleenway.ca/commercial/post-construction-cleaning">Post Construction Cleaning</a></li>
+          <li><a href="https://kleenway.ca/commercial/janitorial">Janitorial</a></li>
+        </ul>
+      </div>
+      <div class="promo rv d2">
+        <svg class="tri" viewBox="0 0 80 72" aria-hidden="true"><path d="M40 4 76 68H4Z" fill="none" stroke="#0a2240" stroke-width="5" stroke-linejoin="round"/><path d="M40 26v22M40 56v4" stroke="#0a2240" stroke-width="6" stroke-linecap="round"/></svg>
+        <div>
+          <h3>Promotions</h3>
+          <p>Call (403) 502-1027 to book.</p>
+        </div>
+        <a class="btn btn-navy" href="https://kleenway.ca/promotions">View promotions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SINCE 2003 -->
+<section class="since" id="why">
+  <div class="wrap">
+    <div class="since-grid">
+      <div class="rv">
+        <div class="big-year">2003</div>
+        <p class="big-cap">Serving Medicine Hat &amp; area for over 17 years.</p>
+      </div>
+      <div class="rv d1">
+        <p class="eyebrow">Why Us?</p>
+        <h2>Looking for the best residential cleaning services in Medicine Hat?</h2>
+        <p>Kleenway Services is a professional residential and commercial cleaning company. We offer standard home cleaning, deep cleaning, annual and holiday clean-up and carpet cleaning, and we are committed to a home cleaning program of the highest quality and reliability.</p>
+        <ul class="chips">
+          <li>Licensed</li><li>Insured</li><li>Bonded</li><li>WCB coverage for our staff</li>
+        </ul>
+      </div>
+    </div>
+    <div class="route rv">
+      <h3>Professional Residential Cleaning Service</h3>
+      <div class="route-line">
+        <div class="step"><b>1</b><h4>A quick consultation</h4><p>A Kleenway representative meets with you to understand your home and your needs.</p></div>
+        <div class="step"><b>2</b><h4>Trained technicians</h4><p>Our trained Kleen Teem members arrive with everything needed to clean your space.</p></div>
+        <div class="step"><b>3</b><h4>Quality you can count on</h4><p>We are committed to quality, consistency and your complete satisfaction.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL BAND -->
+<section class="callband">
+  <div class="wrap">
+    <h2 class="rv">Clean home and office <em>without getting your hands dirty!</em></h2>
+    <div class="sign rv d1">
+      <small>Call us today</small>
+      <a class="num" href="tel:4035021027">(403) 502-1027</a>
+      <p>to schedule an appointment!</p>
+      <a class="btn btn-navy" href="https://kleenway.ca/contact">Get in touch!</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="proof">
+  <div class="wrap">
+    <p class="eyebrow rv">Testimonials</p>
+    <h2 class="rv">Don't take OUR word for it...</h2>
+    <div class="quotes">
+      <blockquote class="q dark rv"><p>I have been a Kleenway customer for several years now and have nothing but good things to say about Mona and Lynn and the service they provide. Kleenway provides a professional and cost effective cleaning that is tailored to my specific needs and budget, and we are regularly complimented on the cleanliness of our facility.</p><cite>Brian Kyle<span>Anytime Fitness</span></cite></blockquote>
+      <blockquote class="q rv d1"><p>I have a Border Collie and an Australian Shepherd in my house and my off-white carpets get dirty and stained often. I usually get them cleaned twice a year. I came across Kleenway Services several years ago. Their cleaning company is unique in that they have an unbeatable system for cleaning and no matter how often I get my rugs cleaned they always come out looking like new.</p><cite>Jackie Sodero</cite></blockquote>
+      <blockquote class="q y rv d2"><p>I highly recommend Kleenway Services! I love their natural products which are safe for my kids and pets! My carpets also look great!! Thanks!</p><cite>Dr. Crystal Taylor</cite></blockquote>
+      <blockquote class="q rv"><p>I have had the opportunity to use the services of Lynn &amp; Mona on several occasions. The work was more than satisfactory and the prices are fair. The biggest advantage is their ability to work on our schedule.</p><cite>John Hashem<span>Whiskey Creek</span></cite></blockquote>
+      <blockquote class="q rv d1"><p>In the real estate world having a carpet cleaner that is excellent in his job and knows the right product to use to lift out those ugly stains that happen to pop up on the carpet is most important. Kleenway Services are quick to respond to our requests and does an excellent job. Drying time is quick and fast making moving in to our client’s new homes fast and hassle free. Lynn and Mona are professional and very conscientious. I would recommend Lynn and Mona to any one of my clients.</p><cite>Rod Wilson<span>Royal LePage Community Realty</span></cite></blockquote>
+      <blockquote class="q rv d2"><p>We have used Lynn and Mona to clean our carpets on a number of occasions. We love their commitment to quality and their pleasant personalities. They treat you as a best friend would treat you. Always a pleasure to use their service.</p><cite>Jim and Shelly Grossman</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-side rv">
+      <svg class="qi" viewBox="0 0 79 79" fill="none" aria-hidden="true"><g stroke="#1668d6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="39.5" cy="39.5" r="36.5"/><path d="M28.9 28.5a11.4 11.4 0 0 1 21.3 3.7c0 7.3-11 11-11 11"/><path d="M39.5 57.75h.04"/></g></svg>
+      <h2>Frequently Asked Questions</h2>
+      <div class="pledge">
+        <h3>Kleenway’s Pledge To You</h3>
+        <p>After each clean, and you notice a mistake, or simply anything you believe does not meet the standards for exceptional quality we promised, just let us know. Get the piece of mind you need with our 24 hour guarantee.</p>
+      </div>
+    </div>
+    <div class="acc rv d1">
+      <details open><summary>Who Is Kleenway?</summary><p>Kleenway Services is a professional Residential &amp; Commercial Cleaning Company. Offering not only standard home cleaning services but deep cleaning, annual and holiday clean-up services and carpet cleaning services that has served the Medicine Hat &amp; Area for over 17 years. Kleenway Services is committed to delivering a home cleaning program of the highest quality and reliability. We offer responsive customer service and a number of additional cleaning services to be your one-stop source for home cleaning services.</p></details>
+      <details><summary>What Does It Cost?</summary><p>We charge a competitive rate of <span class="price">$42.50/hour + GST</span></p></details>
+      <details><summary>Who Will Kleenway Services Send To Clean My Home?</summary><p>Our Kleen Teem members are police cleared, dependable, trustworthy and trained to always be professional - for example, our members will never eat, drink, smoke or use any of your electrical appliances such as radios, microwaves or televisions while in your home.</p></details>
+      <details><summary>Will Kleenway Services Send The Same Team Members Each Visit?</summary><p>We always try to clean your home using the same cleaning technician each time, unless due to sickness or an emergency, we are unable to do so. We want you to feel confident in our team members and they are eager to deliver a custom cleaning for your home as efficiently as possible.</p></details>
+      <details><summary>Who Provides The Cleaning Solutions And Equipment?</summary><p>We bring everything we need to professionally clean your home including necessary supplies, solutions and equipment. In this way, we can ensure all OCCUPATIONAL HEALTH AND SAFETY STANDARDS are met.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="close">
+  <div class="wrap">
+    <img class="mark rv" src="assets/img/kleenway-sparkle.svg" alt="Kleenway Services logo">
+    <h2 class="rv">Whether residential or commercial, the folks at Kleenway Services will make any space shine!</h2>
+    <p class="rv">Clean Home and Office without getting your hands dirty!</p>
+    <a class="btn btn-y rv" href="https://kleenway.ca/contact">Get in touch!</a>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a class="logo" href="https://kleenway.ca/"><img src="assets/img/kleenway-no-monogram.svg" alt="Kleenway Services" width="218" height="64"></a>
+        <p>Great Work, Great Service, Great Cleaning</p>
+        <a class="call" href="tel:4035021027">(403) 502-1027</a>
+        <a class="btn btn-y" href="https://kleenway.ca/hiring" style="padding:.7rem 1.2rem;font-size:.88rem">We're Hiring!</a>
+      </div>
+      <div>
+        <h4>Residential</h4>
+        <ul>
+          <li><a href="https://kleenway.ca/residential/residential-upholstery-cleaning">Upholstery</a></li>
+          <li><a href="https://kleenway.ca/residential/residential-carpet-cleaning">Residential Carpet Cleaning</a></li>
+          <li><a href="https://kleenway.ca/residential/move-in-out">Move In / Out</a></li>
+          <li><a href="https://kleenway.ca/residential/top-to-bottom">Top to Bottom (One Time)</a></li>
+          <li><a href="https://kleenway.ca/residential/home-cleaning-recurring">Home Cleaning (Recurring)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Commercial</h4>
+        <ul>
+          <li><a href="https://kleenway.ca/commercial/commercial-carpet-cleaning">Commercial Carpet Cleaning</a></li>
+          <li><a href="https://kleenway.ca/commercial/post-construction-cleaning">Post Construction Cleaning</a></li>
+          <li><a href="https://kleenway.ca/commercial/janitorial">Janitorial</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://kleenway.ca/why-us">Why Us?</a></li>
+          <li><a href="https://kleenway.ca/promotions">Promotions</a></li>
+          <li><a href="https://kleenway.ca/jobs">Work with us!</a></li>
+          <li><a href="https://kleenway.ca/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <span>© 2026 Kleenway Services. All rights reserved.</span>
+      <span>Design by <a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav'),h=document.querySelector('.hdr');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  window.addEventListener('scroll',function(){h.classList.toggle('scrolled',scrollY>20)},{passive:true});
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
