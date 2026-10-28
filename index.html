@@ -42,7 +42,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
 .hdr{background:var(--navy);position:sticky;top:0;z-index:50;transition:box-shadow .3s}
 .hdr.scrolled{box-shadow:0 10px 30px rgba(3,12,28,.35)}
 .hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
-.logo img{height:58px;width:auto}
+.logo img{height:60px;width:auto}
 .nav{display:flex;align-items:center;gap:6px}
 .nav>li{position:relative}
 .nav>li>a{display:flex;align-items:center;gap:6px;color:#fff;font-weight:700;font-size:.95rem;padding:.7rem .85rem;border-radius:4px;transition:background .2s,color .2s}
@@ -136,6 +136,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
 .promo .tri{width:74px;margin:0 auto}
 .promo .btn{justify-content:center;margin-top:20px;font-size:.88rem;padding:.8rem 1rem}
 
+.shots{display:grid;grid-template-columns:.75fr 1.25fr;gap:26px;margin-top:70px}
+.shot{position:relative;display:block;overflow:hidden;height:440px;clip-path:polygon(0 0,90% 0,100% 11%,100% 100%,0 100%);background:#0d2a4d}
+.shot.s2{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.shot:hover img{transform:scale(1.06)}
+.shot .tag{position:absolute;left:0;bottom:26px;background:var(--yellow);color:var(--navy);font-weight:900;padding:.7rem 1.3rem .7rem 1.1rem;font-size:.95rem;clip-path:polygon(0 0,100% 0,calc(100% - 14px) 100%,0 100%);padding-right:2rem}
+.shot .tag::after{content:" →"}
 /* since */
 .since{padding:130px 0 110px;background:#fff;position:relative}
 .since-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
@@ -202,7 +209,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
 /* closing */
 .close{position:relative;color:#fff;text-align:center;padding:130px 0 140px;isolation:isolate;overflow:hidden;background:var(--navy)}
 .close::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(10,34,64,.86),rgba(10,34,64,.94)),url(assets/img/bubbles.jpg) center/cover}
-.close .mark{width:min(300px,70%);margin:0 auto 34px}
+.close .mark{width:min(380px,76%);height:auto;margin:0 auto 38px}
 .close h2{font-size:clamp(2rem,4.2vw,3.4rem);max-width:860px;margin:0 auto 18px}
 .close p{font-family:var(--serif);font-size:1.4rem;color:#cfe6fb;margin-bottom:36px}
 
@@ -261,6 +268,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
   .logo img{height:48px}
   .hero-art{min-height:330px}
   .stamp{width:120px;height:120px;bottom:20px}
+  .shots{grid-template-columns:1fr}
+  .shot{height:300px}
   .doors{grid-template-columns:1fr}
   .door:nth-child(2){margin-top:0}
   .board{grid-template-columns:1fr}
@@ -285,7 +294,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
 
 <header class="hdr" id="top">
   <div class="wrap">
-    <a class="logo" href="https://kleenway.ca/" aria-label="Kleenway Services home"><img src="assets/img/kleenway-no-monogram.svg" alt="Kleenway Services" width="198" height="58"></a>
+    <a class="logo" href="https://kleenway.ca/" aria-label="Kleenway Services home"><img src="assets/img/kleenway-logo-light.png" alt="Kleenway Services" width="162" height="60"></a>
     <nav aria-label="Main">
       <ul class="nav" id="nav">
         <li><a href="https://kleenway.ca/why-us">Why Us?</a></li>
@@ -371,7 +380,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
     </div>
     <div class="doors">
       <a class="door rv d1" href="https://kleenway.ca/residential">
-        <div class="door-img"><img src="assets/img/residential-carpet.jpg" alt="Vacuuming a fresh cream carpet" loading="lazy"></div>
+        <div class="door-img"><img src="assets/img/carpet-new.jpg" alt="Vacuum head on a clean cream carpet" style="object-position:50% 62%" loading="lazy"></div>
         <div class="door-body">
           <h3>Residential Cleaning Services</h3>
           <p>A clean home does more than look good. It supports your health and lifts your mood.</p>
@@ -379,7 +388,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
         </div>
       </a>
       <a class="door rv d2" href="https://kleenway.ca/commercial">
-        <div class="door-img"><img src="assets/img/commercial-disinfect.jpg" alt="Technician in protective gear disinfecting a surface" loading="lazy"></div>
+        <div class="door-img"><img src="assets/img/office.jpg" alt="Spotless open-plan office with a wet floor sign" style="object-position:56% 50%" loading="lazy"></div>
         <div class="door-body">
           <h3>Commercial Cleaning Services</h3>
           <p>A spotless office is the first impression your clients and staff get of your business.</p>
@@ -427,6 +436,16 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
         </div>
         <a class="btn btn-navy" href="https://kleenway.ca/promotions">View promotions</a>
       </div>
+    </div>
+    <div class="shots">
+      <a class="shot rv" href="https://kleenway.ca/residential/residential-upholstery-cleaning">
+        <img src="assets/img/upholstery.jpg" alt="Gloved technician cleaning a fabric sofa with an extraction tool" loading="lazy" style="object-position:50% 45%">
+        <span class="tag">Upholstery</span>
+      </a>
+      <a class="shot s2 rv d1" href="https://kleenway.ca/commercial/post-construction-cleaning">
+        <img src="assets/img/post-construction.jpg" alt="Cleaning construction dust off a window sill" loading="lazy">
+        <span class="tag">Post Construction Cleaning</span>
+      </a>
     </div>
   </div>
 </section>
@@ -512,7 +531,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
 <!-- CLOSING -->
 <section class="close">
   <div class="wrap">
-    <img class="mark rv" src="assets/img/kleenway-sparkle.svg" alt="Kleenway Services logo">
+    <img class="mark rv" src="assets/img/kleenway-logo-light.png" alt="Kleenway Services logo" width="661" height="245">
     <h2 class="rv">Whether residential or commercial, the folks at Kleenway Services will make any space shine!</h2>
     <p class="rv">Clean Home and Office without getting your hands dirty!</p>
     <a class="btn btn-y rv" href="https://kleenway.ca/contact">Get in touch!</a>
@@ -524,7 +543,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
   <div class="wrap">
     <div class="ftr-grid">
       <div>
-        <a class="logo" href="https://kleenway.ca/"><img src="assets/img/kleenway-no-monogram.svg" alt="Kleenway Services" width="218" height="64"></a>
+        <a class="logo" href="https://kleenway.ca/"><img src="assets/img/kleenway-logo-light.png" alt="Kleenway Services" width="173" height="64"></a>
         <p>Great Work, Great Service, Great Cleaning</p>
         <a class="call" href="tel:4035021027">(403) 502-1027</a>
         <a class="btn btn-y" href="https://kleenway.ca/hiring" style="padding:.7rem 1.2rem;font-size:.88rem">We're Hiring!</a>
