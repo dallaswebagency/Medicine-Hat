@@ -67,20 +67,29 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
 
 /* hero */
 .hero{position:relative;color:#fff;background:var(--navy-2);isolation:isolate;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(6,23,44,.93) 8%,rgba(8,34,68,.74) 55%,rgba(10,50,100,.5)),url(assets/img/water-splash.jpg) center top/cover}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center;padding:84px 0 120px}
-.hero h1{font-size:clamp(2.5rem,4.8vw,4.2rem);margin:18px 0 22px}
-.hero h1 em{font-style:normal;color:var(--yellow);position:relative;white-space:nowrap}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:linear-gradient(104deg,rgba(6,23,44,.96) 0%,rgba(8,34,68,.82) 38%,rgba(14,70,140,.32) 78%,rgba(30,120,210,.18) 100%),url(assets/img/water-splash.jpg) center top/cover}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:96px 0 130px;min-height:740px}
+.hero h1{font-size:clamp(2.6rem,5vw,4.5rem);margin:20px 0 34px}
+.hero h1 em{font-style:normal;color:var(--yellow);position:relative;white-space:nowrap;display:inline-block}
+.hero h1 em svg{position:absolute;left:0;bottom:-18px;width:100%;height:22px;overflow:visible}
+.hero h1 em svg path{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.4s .5s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
 .hero .eyebrow{color:var(--aqua,#8fd0f5);display:flex;align-items:center;gap:12px}
 .hero .eyebrow::before{content:"";width:38px;height:3px;background:var(--yellow)}
 .tagline{font-family:var(--serif);font-size:1.35rem;color:#cfe6fb;margin-bottom:34px;font-weight:400}
 .hero .cta{display:flex;flex-wrap:wrap;gap:16px}
-.hero-art{position:relative;min-height:470px}
-.ph-a{position:absolute;right:0;top:0;width:86%;aspect-ratio:1.28;object-fit:cover;clip-path:polygon(0 0,86% 0,100% 14%,100% 100%,0 100%);box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.hero-art{position:relative;min-height:540px}
+.ph-a,.ph-b-wrap,.stamp,.chip{z-index:2}
+.chip{position:absolute;left:34%;top:-18px;background:#fff;color:var(--navy);font-weight:900;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;padding:.6rem 1rem;border-radius:999px;box-shadow:0 14px 30px rgba(0,0,0,.35);display:flex;align-items:center;gap:8px;animation:bob 5s ease-in-out infinite}
+.chip::before{content:"";width:10px;height:10px;border-radius:50%;background:#26c281;box-shadow:0 0 0 4px rgba(38,194,129,.25)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.bub{position:absolute;bottom:-60px;border-radius:50%;border:2px solid rgba(255,255,255,.35);background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.45),rgba(255,255,255,.04) 60%);animation:rise linear infinite;pointer-events:none}
+@keyframes rise{to{transform:translateY(-900px) translateX(30px);opacity:0}}
+.ph-a{position:absolute;right:0;top:10px;width:88%;aspect-ratio:1.02;object-fit:cover;clip-path:polygon(0 0,84% 0,100% 12%,100% 100%,0 100%);filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
 .ph-b{width:100%;aspect-ratio:1.45;object-fit:cover;object-position:30% 50%;border:9px solid #fff;box-shadow:0 24px 50px rgba(0,0,0,.45)}
-.ph-b-wrap{position:absolute;left:-14px;bottom:4px;width:62%;transform:rotate(-4deg)}
+.ph-b-wrap{position:absolute;left:-24px;bottom:-14px;width:54%;transform:rotate(-5deg)}
 .ph-b-wrap::after{content:"";position:absolute;left:50%;top:-14px;width:96px;height:28px;background:rgba(255,201,40,.85);transform:translateX(-50%) rotate(-4deg)}
-.stamp{position:absolute;right:-8px;bottom:36px;width:176px;height:176px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.35))}
+.stamp{position:absolute;right:-14px;bottom:20px;width:190px;height:190px;filter:drop-shadow(0 12px 18px rgba(0,0,0,.35))}
 .stamp .ring{transform-origin:100px 100px;animation:spin 28s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
@@ -252,7 +261,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
   .nav .has-sub>a::after{display:none}
   .hero-grid,.help-grid,.since-grid,.faq-grid,.callband .wrap{grid-template-columns:1fr}
   .hero-grid{padding:60px 0 90px;gap:60px}
-  .hero-art{min-height:400px;max-width:560px}
+  .hero-art{min-height:440px;max-width:560px}
+  .hero-grid{min-height:0}
   .faq-side{position:static}
   .help{padding:80px 0 100px}
   .since{padding:80px 0}
@@ -266,7 +276,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
   .strip .wrap{flex-direction:column;gap:2px;text-align:center}
   .hire{display:none}
   .logo img{height:48px}
-  .hero-art{min-height:330px}
+  .hero-art{min-height:340px}
+  .chip{left:12%}
   .stamp{width:120px;height:120px;bottom:20px}
   .shots{grid-template-columns:1fr}
   .shot{height:300px}
@@ -330,18 +341,20 @@ h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacin
 <main>
 <!-- HERO -->
 <section class="hero">
+  <span class="bub" style="left:6%;width:22px;height:22px;animation-duration:15s"></span><span class="bub" style="left:18%;width:44px;height:44px;animation-duration:22s;animation-delay:-6s"></span><span class="bub" style="left:34%;width:16px;height:16px;animation-duration:13s;animation-delay:-3s"></span><span class="bub" style="left:48%;width:30px;height:30px;animation-duration:19s;animation-delay:-11s"></span><span class="bub" style="left:62%;width:54px;height:54px;animation-duration:26s;animation-delay:-14s"></span><span class="bub" style="left:78%;width:20px;height:20px;animation-duration:16s;animation-delay:-8s"></span><span class="bub" style="left:90%;width:36px;height:36px;animation-duration:21s;animation-delay:-2s"></span>
   <div class="hero-bg"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <p class="eyebrow">Residential &amp; Commercial Cleaning</p>
-      <h1>We Keep Your Home and Facility <em>Safe and Healthy</em></h1>
+      <h1>We Keep Your Home and Facility <em>Safe and Healthy<svg viewBox="0 0 400 22" preserveAspectRatio="none" aria-hidden="true"><path d="M2 16C90 4 230 2 398 12" fill="none" stroke="#2f8fe6" stroke-width="7" stroke-linecap="round"/></svg></em></h1>
       <p class="tagline">Great Work, Great Service, Great Cleaning</p>
       <div class="cta">
         <a class="btn btn-y" href="tel:4035021027">Call (403) 502-1027</a>
         <a class="btn btn-line" href="https://kleenway.ca/disinfecting">Learn more</a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="false">
+    <div class="hero-art">
+      <span class="chip">24 hour guarantee</span>
       <img class="ph-a" src="assets/img/cleaning-cart.jpg" alt="Kleenway cleaning cart with a Kleenway Cares wet floor sign">
       <div class="ph-b-wrap"><img class="ph-b" src="assets/img/placard.jpg" alt="Cleaning in progress caution signs"></div>
       <svg class="stamp" viewBox="0 0 200 200" role="img" aria-label="Since 2003. Licensed, insured, bonded, WCB">
